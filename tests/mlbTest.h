@@ -157,7 +157,7 @@ TEST(mlb_test, test3) {
         FAIL();
     }
 }
-TEST(mlb_test, test3) {
+TEST(mlb_test, test4) {
     /*
      Open output file
      */
@@ -207,7 +207,7 @@ TEST(mlb_test, test3) {
     }
 }
 
-TEST(mlb_test, test3) {
+TEST(mlb_test, test5) {
     /*
      Open output file
      */
@@ -256,7 +256,7 @@ TEST(mlb_test, test3) {
         FAIL();
     }
 }
-TEST(mlb_test, test3) {
+TEST(mlb_test, test6) {
     /*
      Open output file
      */
@@ -306,7 +306,7 @@ TEST(mlb_test, test3) {
     }
 }
 
-TEST(mlb_test, test3) {
+TEST(mlb_test, test7) {
     /*
      Open output file
      */

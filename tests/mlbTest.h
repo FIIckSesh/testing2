@@ -331,7 +331,7 @@ TEST(mlb_test, test7) {
     /*
      Run test function
      */
-    
+     mwcrsr(txt, 1, 4);
     cursor_to_begin(txt);
     show(txt);
     

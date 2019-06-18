@@ -232,7 +232,7 @@ TEST(mlb_test, test5) {
     /*
      Run test function
      */
-    
+   
     cursor_to_begin(txt);
     show(txt);
     

@@ -6,9 +6,9 @@ before_install:
   
 addons:
   sonarcloud:
-    organization: "egorhristoforov-github"
+    organization: "fiicksesh-github"
     token:
-      secure: $SONAR_TOKEN
+      secure: "33b0cd812c96e5e357675c645b1c6b358e4d6c7d"
 
 script:
   - qmake

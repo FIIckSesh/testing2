@@ -1,5 +1,5 @@
-#ifndef SHOWUPPER_TEST_H
-#define SHOWUPPER_TEST_H
+#ifndef SHOWUPPERTEST_H
+#define SHOWUPPERTEST_H
 #include "shared.h"
 
 extern "C" {
@@ -7,7 +7,7 @@ extern "C" {
 }
 
 
-TEST(showUpperTest, test1) {
+TEST(showUpperTest, simpletest) {
     /*
         Open output file
     */
@@ -57,7 +57,7 @@ TEST(showUpperTest, test1) {
     }
 }
 
-TEST(showUpperTest, test2) {
+TEST(showUpperTest, multiplelines) {
     /*
         Open output file
     */
@@ -106,7 +106,7 @@ TEST(showUpperTest, test2) {
     }
 }
 
-TEST(showUpperTest, test3) {
+TEST(showUpperTest, emptyfile) {
     /*
         Open output file
     */
@@ -155,7 +155,7 @@ TEST(showUpperTest, test3) {
     }
 }
 
-TEST(showUpperTest, test4) {
+TEST(showUpperTest, first_line_is_empty) {
     /*
         Open output file
     */
@@ -204,7 +204,7 @@ TEST(showUpperTest, test4) {
     }
 }
 
-TEST(showUpperTest, test5) {
+TEST(showUpperTest, cirilic) {
     /*
         Open output file
     */
@@ -251,7 +251,105 @@ TEST(showUpperTest, test5) {
     } else {
         FAIL();
     }
-}
+}
+
+TEST(showUpperTest, symbols) {
+    /*
+     Open output file
+     */
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output6.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output6.txt", "wb");
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
+    int oldstdOut = changeStream(outputFile);
+    
+    /*
+     Load input data
+     */
+    
+    text txt = create_text();
+    char inFile[MAXLINE];
+    TRAVIS ? strncpy(inFile, "tests/input/input6.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input6.txt", MAXLINE);
+    load(txt, inFile);
+    
+    /*
+     Run test function
+     */
+    
+    showupper(txt);
+    
+    /*
+     Close output file
+     */
+    
+    returnStream(outputFile, oldstdOut);
+    
+    /*
+     Execute test
+     */
+    
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected6.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected6.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output6.txt", "r") : outputData = fopen("../../testing2/tests/output/output6.txt", "r");
+    
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
+}
+
+TEST(showUpperTest, complextest) {
+    /*
+     Open output file
+     */
+    FILE *outputFile;
+    TRAVIS ? outputFile = fopen("tests/output/output7.txt", "wb") : outputFile = fopen("../../testing2/tests/output/output7.txt", "wb");
+    if (outputFile == NULL) {
+        printf("Cannot open file for output");
+        FAIL();
+    }
+    int oldstdOut = changeStream(outputFile);
+    
+    /*
+     Load input data
+     */
+    
+    text txt = create_text();
+    char inFile[MAXLINE];
+    TRAVIS ? strncpy(inFile, "tests/input/input7.txt", MAXLINE) : strncpy(inFile, "../../testing2/tests/input/input7.txt", MAXLINE);
+    load(txt, inFile);
+    
+    /*
+     Run test function
+     */
+    
+    showupper(txt);
+    
+    /*
+     Close output file
+     */
+    
+    returnStream(outputFile, oldstdOut);
+    
+    /*
+     Execute test
+     */
+    
+    FILE *expectedData;
+    TRAVIS ? expectedData = fopen("tests/expected/expected7.txt", "r") : expectedData = fopen("../../testing2/tests/expected/expected7.txt", "r");
+    FILE *outputData;
+    TRAVIS ? outputData = fopen("tests/output/output7.txt", "r") : outputData = fopen("../../testing2/tests/output/output7.txt", "r");
+    
+    if (executeTest(expectedData, outputData) == 1) {
+        SUCCEED();
+    } else {
+        FAIL();
+    }
+}
 
 
-#endif // SHOWUPPER_TEST_H
+#endif // SHOWUPPERTEST_H

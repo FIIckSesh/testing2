@@ -82,7 +82,7 @@ TEST(mlb_test, test2) {
         Run test function
     */
 
-   mwcrsr(txt, 3, 3);
+   mwcrsr(txt, 1, 4);
    cursor_to_begin(txt);
    show(txt);
 
@@ -133,6 +133,7 @@ TEST(mlb_test, test3) {
      Run test function
      */
     
+    mwcrsr(txt, 1, 1);
     cursor_to_begin(txt);
     show(txt);
     

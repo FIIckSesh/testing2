@@ -251,7 +251,7 @@ TEST(showUpperTest, cirilic) {
     } else {
         FAIL();
     }
-}
+}
 
 TEST(showUpperTest, symbols) {
     /*
@@ -300,8 +300,7 @@ TEST(showUpperTest, symbols) {
     } else {
         FAIL();
     }
-}
-
+}
 TEST(showUpperTest, complextest) {
     /*
      Open output file
@@ -349,7 +348,6 @@ TEST(showUpperTest, complextest) {
     } else {
         FAIL();
     }
-}
-
+}
 
 #endif // SHOWUPPERTEST_H

@@ -6,7 +6,7 @@ extern "C" {
 #include "common.h"
 }
 
-TEST(mlb_test, test1) {
+TEST(mlbTest, simpletest1) {
     /*
         Open output file
     */
@@ -57,7 +57,7 @@ TEST(mlb_test, test1) {
     }
 }
 
-TEST(mlb_test, test2) {
+TEST(mlbTest, simpletest2) {
     /*
         Open output file
     */
@@ -108,7 +108,7 @@ TEST(mlb_test, test2) {
     }
 }
 
-TEST(mlb_test, test3) {
+TEST(mlbTest, simpletest3) {
     /*
      Open output file
      */
@@ -158,7 +158,7 @@ TEST(mlb_test, test3) {
         FAIL();
     }
 }
-TEST(mlb_test, test4) {
+TEST(mlbTest, muliplelinesS) {
     /*
      Open output file
      */
@@ -208,7 +208,7 @@ TEST(mlb_test, test4) {
     }
 }
 
-TEST(mlb_test, test5) {
+TEST(mlbTest, emptyLines) {
     /*
      Open output file
      */
@@ -257,7 +257,7 @@ TEST(mlb_test, test5) {
         FAIL();
     }
 }
-TEST(mlb_test, test6) {
+TEST(mlbTest, emptyFile) {
     /*
      Open output file
      */
@@ -307,7 +307,7 @@ TEST(mlb_test, test6) {
     }
 }
 
-TEST(mlb_test, test7) {
+TEST(mlbTest, testCirilic) {
     /*
      Open output file
      */
@@ -331,7 +331,7 @@ TEST(mlb_test, test7) {
     /*
      Run test function
      */
-     mwcrsr(txt, 1, 4);
+    mwcrsr(txt, 1, 4);
     cursor_to_begin(txt);
     show(txt);
     
